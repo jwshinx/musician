@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%= @musician.name %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @musician.year %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @musician.category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_musician_path(@musician) %> |
+<%= link_to 'Back', musicians_path %>

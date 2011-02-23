@@ -1,0 +1,19 @@
+<h1>Role Assignment</h1>
+
+<%= form_tag :action => "commit_assign"  do %>
+
+  <div class="field">
+    <label for="user" %>Users:
+    <%= select_tag :user, 
+      options_for_select(
+        @users.select{ |x| x.role_id.nil? }.collect{ |u| [u.username, u.id] }
+      ) %>
+  </div>
+  <div class="field">
+    <label for="role" %>Roles:
+    <%= select_tag :role, options_for_select(@roles.collect{ |r| [r.name, r.id] }) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Assign" %>
+  </div>
+<% end %>
